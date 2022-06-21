@@ -5,16 +5,20 @@ sudo: required
 services:
   - docker
 
-before_install:
+install:
   #- docker pull alexblaj/cloudappv1_frontend
   #- docker pull alexblaj/cloudappv1_reporting
   #- docker pull alexblaj/cloudappv1_backend
   #- docker-compose build
   - ls
+  - pyhton -m pip install --ugragrade pip
   - docker build -t alexblaj/cloudappv1_frontend . -f ./frontEnd/Dockerfile #./fronEnd
   - ls
   - docker build -t alexblaj/cloudappv1_backend . -f ./backEnd/Dockerfile #./backEnd
   - docker build -t alexblaj/cloudappv1_reporting . -f ./reporting/Dockerfile #./reporting
+
+script:
+  - pip3 install -r requirements.txt
 
 after_succes:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
