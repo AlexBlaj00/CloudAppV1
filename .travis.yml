@@ -6,9 +6,16 @@ services:
   - docker
 
 before_install:
-  - docker-compose build
-
+  #- docker pull alexblaj/cloudappv1_frontend
+  #- docker pull alexblaj/cloudappv1_reporting
+  #- docker pull alexblaj/cloudappv1_backend
+  #- docker-compose build
+  - docker build -t alexblaj/cloudappv1_frontend -f ./fronEnd/Dockerfile ./frontEnd
+  - docker build -t alexblaj/cloudappv1_backend -f ./backEnd/Dockerfile./backEnd
+  - docker build -t alexblaj/cloudappv1_reporting -f ./reporting/Dockerfile ./reporting
 
 after_succes:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker compose push alexblaj/cloudapps
+  - docker push alexblaj/cloudappv1_frontend
+  - docker push alexblaj/cloudappv1_backend
+  - docker push alexblaj/cloudappv1_reporting
