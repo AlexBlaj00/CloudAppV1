@@ -6,7 +6,7 @@ COPY  . /frontEnd
 
 RUN ls
 
-COPY ./frontEnd/requirements.txt .
+#COPY ./frontEnd/requirements.txt .
 
 #RUN pip3 install --upgrade pip
 
