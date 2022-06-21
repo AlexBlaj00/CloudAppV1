@@ -10,7 +10,7 @@ before_install:
 
 install:
   - gem install bundler --version '1.7.4'
-script: "rake"
+
 
 after_succes:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
