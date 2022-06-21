@@ -17,7 +17,7 @@ before_install:
 
 script: 
   - docker image ls
-  - docker-compose build
+  #- docker-compose build
 
 
 after_succes:
@@ -27,14 +27,13 @@ after_succes:
   - docker push alexblaj/cloudappv1_reporting
 
 deploy:
+  acces_key_id: $AWS_ACCESS_KEY
+  secure_key_id: "$AWS_SECRET_KEY"
+  skip_cleanup: true
   provider: elasticbeanstalk
   region: eu-central-1
   app: CloudAppsV1.2
   env: Cloudappsv12-env
   bucket_name : elasticbeanstalk-eu-central-1-441936266847
   bucket_path: CloudAppsV1.2
-  on:
-    branch: master
-  acces_key_id: $AWS_ACCESS_KEY
-  secure_key_id: "$AWS_SECRET_KEY"
-  skip_cleanup: true
+  
