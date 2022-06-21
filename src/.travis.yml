@@ -4,7 +4,12 @@ services:
   - docker
 
 before_install:
-  - docker build -t alexblaj/CloudApps .
+  - docker build -t alexblaj/cloudapps .
 
 script:
-  - ./star.sh
+  - docker run alexblaj/cloudapps ./star.sh
+
+after_succes:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push alexblaj/cloudapps
+
