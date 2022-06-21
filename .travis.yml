@@ -12,7 +12,7 @@ install:
   #- docker-compose build
   - ls
   #- pyhton -m pip install --ugragrade pip
-  - pip3 install -r req_travis.txt
+  - pip install -r req_travis.txt
   - docker build -t alexblaj/cloudappv1_frontend . -f ./frontEnd/Dockerfile #./fronEnd
   - ls
   - docker build -t alexblaj/cloudappv1_backend . -f ./backEnd/Dockerfile #./backEnd
