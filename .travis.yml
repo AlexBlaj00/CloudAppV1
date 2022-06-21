@@ -11,9 +11,9 @@ before_install:
   #- docker pull alexblaj/cloudappv1_backend
   #- docker-compose build
   - ls
-  - docker build -t alexblaj/cloudappv1_frontend -f ./fronEnd/Dockerfile ./fronEnd/Dockerfile
-  - docker build -t alexblaj/cloudappv1_backend -f ./backEnd/Dockerfile./backEnd/Dockerfile
-  - docker build -t alexblaj/cloudappv1_reporting -f ./reporting/Dockerfile ./reporting/Dockerfile
+  - docker build -t alexblaj/cloudappv1_frontend -f /fronEnd/Dockerfile ./fronEnd/Dockerfile
+  - docker build -t alexblaj/cloudappv1_backend -f /backEnd/Dockerfile./backEnd/Dockerfile
+  - docker build -t alexblaj/cloudappv1_reporting -f /reporting/Dockerfile ./reporting/Dockerfile
 
 after_succes:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
