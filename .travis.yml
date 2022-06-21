@@ -25,3 +25,15 @@ after_succes:
   - docker push alexblaj/cloudappv1_frontend
   - docker push alexblaj/cloudappv1_backend
   - docker push alexblaj/cloudappv1_reporting
+
+deploy:
+  provider: elasticbeanstalk
+  region: eu-central-1
+  app: CloudAppsV1.2
+  env: Cloudappsv12-env
+  bucket_name : elasticbeanstalk-eu-central-1-441936266847
+  bucket_path: CloudAppsV1.2
+  on: 
+    branch: master
+    access_key_id : $AWS_ACCESS_KEY
+    secret_acces_key: $AWS_SECRET_KEY
