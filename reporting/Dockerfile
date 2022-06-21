@@ -4,7 +4,7 @@ WORKDIR /reporting
 
 COPY . /reporting
 
-COPY requirements.txt .
+COPY ./reporting/requirements.txt .
 
 RUN pip3 install --upgrade pip
 

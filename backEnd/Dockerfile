@@ -6,9 +6,7 @@ COPY . /backEnd
 
 RUN ls
 
-RUN cd backEnd
-
-COPY requirements.txt .
+COPY ./backEnd/requirements.txt .
 
 RUN pip3 install --upgrade pip
 
