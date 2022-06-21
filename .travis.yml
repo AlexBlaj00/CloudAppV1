@@ -3,20 +3,20 @@ language: python
 services:
   - docker
 
-install:
+before_install:
   #- docker pull alexblaj/cloudappv1_frontend
   #- docker pull alexblaj/cloudappv1_reporting
   #- docker pull alexblaj/cloudappv1_backend
   #- docker-compose build
   #- pyhton -m pip install --ugragrade pip
-  - pip3 install mariadb
+  - pip install mariadb
   - pip install -r req_travis.txt
   - docker build -t alexblaj/cloudappv1_frontend . -f ./frontEnd/Dockerfile #./fronEnd
   - docker build -t alexblaj/cloudappv1_backend . -f ./backEnd/Dockerfile #./backEnd
   - docker build -t alexblaj/cloudappv1_reporting . -f ./reporting/Dockerfile #./reporting
 
-script:
-  - docker image ls 
+script: 
+  - docker image ls
 
 after_succes:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
