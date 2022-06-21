@@ -35,5 +35,6 @@ deploy:
   bucket_path: CloudAppsV1.2
   on: 
     branch: master
-    access_key_id : $AWS_ACCESS_KEY
-    secret_acces_key: $AWS_SECRET_KEY
+    acces_key_id: $AWS_ACCESS_KEY
+    secure_key_id: "$AWS_SECRET_KEY"
+    skip_cleanup: true
