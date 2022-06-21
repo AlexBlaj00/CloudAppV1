@@ -28,7 +28,7 @@ after_succes:
 
 deploy:
   acces_key_id: $AWS_ACCESS_KEY
-  secure_key_id: "$AWS_SECRET_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
   skip_cleanup: true
   provider: elasticbeanstalk
   region: eu-central-1
