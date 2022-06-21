@@ -8,7 +8,6 @@ before_install:
 
 script:
   - docker network create micro_network
-  - docker-compose up
 
 after_succes:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
