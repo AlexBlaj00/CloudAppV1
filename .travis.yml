@@ -1,7 +1,5 @@
 language: python
 
-sudo: required
-
 services:
   - docker
 
@@ -10,13 +8,15 @@ install:
   #- docker pull alexblaj/cloudappv1_reporting
   #- docker pull alexblaj/cloudappv1_backend
   #- docker-compose build
-  - ls
   #- pyhton -m pip install --ugragrade pip
+  - pip3 install mariadb
   - pip install -r req_travis.txt
   - docker build -t alexblaj/cloudappv1_frontend . -f ./frontEnd/Dockerfile #./fronEnd
-  - ls
   - docker build -t alexblaj/cloudappv1_backend . -f ./backEnd/Dockerfile #./backEnd
   - docker build -t alexblaj/cloudappv1_reporting . -f ./reporting/Dockerfile #./reporting
+
+script:
+  - docker image ls 
 
 after_succes:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
