@@ -10,6 +10,7 @@ before_install:
   #- docker-compose build
   - ls
   - docker build -t alexblaj/cloudappv1_frontend . -f ./frontEnd/Dockerfile #./fronEnd
+  - ls
   - docker build -t alexblaj/cloudappv1_backend . -f ./backEnd/Dockerfile #./backEnd
   - docker build -t alexblaj/cloudappv1_reporting . -f ./reporting/Dockerfile #./reporting
 
