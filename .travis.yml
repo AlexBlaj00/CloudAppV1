@@ -33,8 +33,8 @@ deploy:
   env: Cloudappsv12-env
   bucket_name : elasticbeanstalk-eu-central-1-441936266847
   bucket_path: CloudAppsV1.2
-  on: 
+  on:
     branch: master
-    acces_key_id: $AWS_ACCESS_KEY
-    secure_key_id: "$AWS_SECRET_KEY"
-    skip_cleanup: true
+  acces_key_id: $AWS_ACCESS_KEY
+  secure_key_id: "$AWS_SECRET_KEY"
+  skip_cleanup: true
