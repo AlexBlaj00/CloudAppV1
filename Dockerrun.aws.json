@@ -3,7 +3,7 @@
     "containerDefinitions" : [
         {
             "name" : "frontEnd",
-            "image" : "" ,
+            "image" : "alexblaj/cloudappv1_frontend" ,
             "hostname" : "frontend",
             "essential" : true,
             "portMappings" : [
@@ -17,7 +17,7 @@
         },
         {
             "name" : "backEnd",
-            "image" : "" ,
+            "image" : "alexblaj/cloudappv1_backend" ,
             "hostname" : "backEnd",
             "essential" : true,
             "portMappings" : [
@@ -31,7 +31,7 @@
         },
         {
             "name" : "reporting",
-            "image" : "" ,
+            "image" : "alexblaj/cloudappv1_reporting" ,
             "hostname" : "reporting",
             "essential" : true,
             "portMappings" : [
