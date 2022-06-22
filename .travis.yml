@@ -28,12 +28,12 @@ after_succes:
 
 deploy:
   provider: elasticbeanstalk
-  region: eu-central-1
+  region: us-east-1
   app: CloudAppsV1
   env: Cloudappsv1-env
   acces_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
-  bucket_name : elasticbeanstalk-eu-central-1-441936266847
+  bucket_name : elasticbeanstalk-us-east-1-441936266847
   bucket_path: CloudAppsV1
   on:
     branch: master
