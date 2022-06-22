@@ -27,13 +27,12 @@ after_succes:
   - docker push alexblaj/cloudappv1_reporting
 
 deploy:
-  acces_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "$AWS_SECRET_KEY"
-  skip_cleanup: true
   provider: elasticbeanstalk
   region: eu-central-1
   app: CloudAppsV1.2
   env: Cloudappsv12-env
-  bucket_name : cloudv1
-  bucket_path: CloudAppsV1.2
+  acces_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
+  bucket_name : "cloudv1"
+  bucket_path: "docker"
   
