@@ -34,6 +34,6 @@ deploy:
   region: eu-central-1
   app: CloudAppsV1.2
   env: Cloudappsv12-env
-  bucket_name : elasticbeanstalk-eu-central-1-441936266847
+  bucket_name : cloudv1
   bucket_path: CloudAppsV1.2
   
