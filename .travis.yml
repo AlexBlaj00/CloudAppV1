@@ -33,7 +33,7 @@ deploy:
   env: Cloudappsv1-env-2
   acces_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
-  bucket_name : elasticbeanstalk-eu-central-1-441936266847
+  bucket_name : cloudv1
   bucket_path: CloudAppsV1
   on:
     branch: master
