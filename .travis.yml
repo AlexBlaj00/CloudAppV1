@@ -1,3 +1,5 @@
+sudo: required
+
 language: python
 
 services:
@@ -28,9 +30,10 @@ deploy:
   env: Testcloudapp-env
   acces_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
-  bucket_name : testv1.2
-  bucket_path: TestCloudApp
+  bucket_name : elasticbeanstalk-eu-central-1-441936266847
+  bucket_path: testapp
   on:
     branch: master
-  skip_cleanup: true
   
+#after_deploy:
+#  - ./star.sh
