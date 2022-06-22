@@ -24,12 +24,13 @@ after_succes:
 deploy:
   provider: elasticbeanstalk
   region: eu-central-1
-  app: cloudappv1
-  env: Cloudappv1-env
+  app: multi-container
+  env: Multicontainer-env
   acces_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
   bucket_name : elasticbeanstalk-eu-central-1-457216790966
-  bucket_path : cloudappv1
+  bucket_path: 
+  skip_cleanup: true
   on:
     branch: master
 #after_deploy:
