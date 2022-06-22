@@ -4,11 +4,6 @@ services:
   - docker
 
 before_install:
-  #- docker pull alexblaj/cloudappv1_frontend
-  #- docker pull alexblaj/cloudappv1_reporting
-  #- docker pull alexblaj/cloudappv1_backend
-  #- docker-compose build
-  #- pyhton -m pip install --ugragrade pip
   - pip install -r req_travis.txt
   - docker build -t alexblaj/cloudappv1_frontend . -f ./frontEnd/Dockerfile #./fronEnd
   - docker build -t alexblaj/cloudappv1_backend . -f ./backEnd/Dockerfile #./backEnd
@@ -29,12 +24,12 @@ after_succes:
 deploy:
   provider: elasticbeanstalk
   region: eu-central-1
-  app: CloudAppsV1
-  env: Cloudappsv1-env-2
+  app: TestCloudApp
+  env: Testcloudapp-env
   acces_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
-  bucket_name : cloudv1
-  bucket_path: CloudAppsV1
+  bucket_name : testv1.2
+  bucket_path: TestCloudApp
   on:
     branch: master
   skip_cleanup: true
