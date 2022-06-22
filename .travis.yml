@@ -34,5 +34,7 @@ deploy:
   acces_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
   bucket_name : "cloudv1"
-  bucket_path: "docker"
+  bucket_path: "CloudAppsV1.2"
+  on:
+    branch: master
   
