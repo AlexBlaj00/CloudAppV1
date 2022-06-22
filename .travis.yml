@@ -33,8 +33,9 @@ deploy:
   env: Cloudappsv12-env
   acces_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
-  bucket_name : "cloudv1"
-  bucket_path: "CloudAppsV1.2"
+  bucket_name : cloudv1
+  bucket_path: CloudAppsV1.2
   on:
     branch: master
+  skip_cleanup: true
   
