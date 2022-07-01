@@ -1,7 +1,6 @@
 Flask
 mysql
 passlib
-mariadb
 flask_restful
 mysql-connector
 plotly

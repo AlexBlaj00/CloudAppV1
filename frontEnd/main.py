@@ -26,10 +26,13 @@ import pandas as pd
 import csv, io, time, zipfile, os
 from os.path import basename
 from zipfile import ZipFile
+#from OpenSSL import SSL
+#import ssl
+#import socket
 #ssl.PROTOCOL_TLSv1_2
 #context = SSL.Context(ssl.PROTOCOL_TLSv1_2)
-#context.use_privatekey_file('server.key')
-#context.use_certificate_file('server.crt')   
+#context.use_privatekey_file('key.pem')
+#context.use_certificate_file('cert.pem')   
 #==============================================================================#
 @app.route('/')
 def home():
@@ -795,10 +798,9 @@ def reset_password():
 @app.route('/', methods=['GET'])
 def serve():
     return "Hello world", 200
-
+    
 if __name__ == "__main__":
   app.secret_key = os.urandom(12)
-  #context = ('cert.perm', 'key.perm')
+  #context = ('cert.pem', 'key.pem')
   app.run(debug=True, host='0.0.0.0', port=4000)
-
 #==============================================================================#

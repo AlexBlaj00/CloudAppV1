@@ -8,7 +8,8 @@ networks:
 services:
   backend:
     container_name: backend-container
-    build: ./backEnd
+    image : alexblaj/cloudappv1_backend:latest
+    #build: ./backEnd
     ports:
       - "5000:5000"
     networks:
@@ -17,7 +18,8 @@ services:
     
   frontend:
     container_name: frontend-container
-    build: ./frontEnd
+    #build: ./frontEnd
+    image: alexblaj/cloudappv1_frontend:latest
     ports:
       - "4000:4000"
     networks:
@@ -26,10 +28,10 @@ services:
 
   reporting:
     container_name: reporting-container
-    build: ./reporting
+    #build: ./reporting
+    image: alexblaj/cloudappv1_reporting:latest
     ports:
       - "5003:5003"
     networks:
       - micro_network    
     restart: always
-

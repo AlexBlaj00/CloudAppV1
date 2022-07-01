@@ -820,7 +820,7 @@ def delete_user_run():
 def execute_delete_user(delete):
     # get the list of ids that the admin wants to delete
     #delete = request.form.getlist('checks')
-    ids_string = form_delete_id_string(delete, True)    
+    ids_string = form_delete_id_string(delete, True)
     queries = []
     queries.append("DELETE FROM users WHERE id IN " + ids_string)
 
@@ -1016,22 +1016,17 @@ def admin_modify_run():
             database=DB_DATABASE, port=DB_PORT)
         cur = conn.cursor(buffered = True)
         if 'id' in json_obj:
-            #print(update_group(json_obj))
             cur.execute(update_group(json_obj))
         if 'id_perm' in json_obj:
-            #print(update_permissions(json_obj))
             cur.execute(update_permissions(json_obj))
         if 'id_app' in json_obj:
-            #print(update_apps(json_obj))
             cur.execute(update_apps(json_obj))
 
-        #(insert_user_group, remove_user_group) = update_user_group(json_obj)    
         if ('id_user' and 'add_group') in json_obj:
             cur.execute(update_user_group(json_obj))
         if ('id_user' and 'remove_group') in json_obj:
             cur.execute(update_user_group(json_obj))
         
-        #(insert_user_perm, remove_user_perm) = update_user_perm(json_obj)
         if ('id_group' and 'add_perm') in json_obj:
             cur.execute(update_user_perm(json_obj))
         if ('id_group' and 'remove_perm') in json_obj:
